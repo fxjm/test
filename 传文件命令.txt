@@ -1,0 +1,10 @@
+put -r d:\setup\cas
+
+https://github.com/webpack-contrib/mini-css-extract-plugin
+./zkcli.sh -zkhost 192.168.25.144:2181,192.168.25.144:2182,192.168.25.144:2183 -cmd upconfig -confdir /usr/local/solrhomes/solrhome-1/collection1/conf -confname myconf
+
+http://192.168.25.144:8180/solr/admin/collections?action=CREATE&name=collection2&numShards=2&replicationFactor=2
+
+http://192.168.25.144:8480/solr/admin/collections?action=DELETE&name=collection3
+
+./redis-trib.rb create --replicas 1 192.168.25.144:7001 192.168.25.144:7002 192.168.25.144:7003 192.168.25.144:7004 192.168.25.144:7005 192.168.25.144:7006
